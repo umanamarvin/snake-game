@@ -13,6 +13,9 @@ food = Food(snake_body, screen)
 food.create()
 food.reappear()
 
+score = 0
+scoreboard = Scoreboard.create_scoreboard(score)
+
 
 game = True
 
@@ -24,8 +27,8 @@ while game:
     if food.food_collision():
         snake.increase()
         speed = snake.go_faster(speed)
-    game = snake.wall_collision()
-    # game = snake.tail_collision()
+        Scoreboard.increase_score(scoreboard, score)
+    # game = snake.wall_collision()
 
     # if wall_col or tail_col:
     #     game = False

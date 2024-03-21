@@ -1,3 +1,4 @@
+import time
 from turtle import Turtle, Screen
 import constants
 
@@ -36,7 +37,7 @@ class Snake:
     def control(self):
 
         head = self.body[0]
-
+        # time.sleep(0.01)
         def go_up():
             if head.heading() != 270:
                 self.body[0].setheading(90)
