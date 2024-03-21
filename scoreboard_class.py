@@ -1,5 +1,8 @@
 from turtle import Screen, Turtle
 
+score = 0
+
+
 class Scoreboard:
     def __init__(self):
         pass
@@ -13,7 +16,7 @@ class Scoreboard:
         return screen
 
     @staticmethod
-    def create_scoreboard(score):
+    def create_scoreboard():
         scoreboard = Turtle()
         scoreboard.penup()
         scoreboard.color('white')
@@ -21,9 +24,9 @@ class Scoreboard:
         scoreboard.write(f'Score: {score}', True, align="center", font=('Arial', 20, 'normal'))
         scoreboard.hideturtle()
 
-    @staticmethod
-    def increase_score(board, score):
-        board.write(f'Score: {score}', True, align="center", font=('Arial', 20, 'normal'))
-
+    # def increase_score(self, board):
+    #     board.clear()
+    #     board.write(f'Score: {self.score + 1}', True, align="center", font=('Arial', 20, 'normal'))
+    #     # board.hideturtle()
 
 

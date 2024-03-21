@@ -9,6 +9,3 @@ UP = 'w'
 DOWN = 's'
 LEFT = 'a'
 RIGHT = 'd'
-
-
-# print(MAX_STEP_Y)

@@ -9,7 +9,8 @@ class Snake:
         self.screen = screen
 
     def create(self):
-        initial_positions = [(0, 0), (-20, 0), (-40, 0), (-60, 0), (-80, 0), (-100, 0), (-120, 0), (-140, 0), (-160, 0)]
+        # initial_positions = [(0, 0), (-20, 0), (-40, 0), (-60, 0), (-80, 0), (-100, 0), (-120, 0), (-140, 0), (-160, 0)]
+        initial_positions = [(0, 0), (-20, 0), (-40, 0)]
         for position in initial_positions:
             part = Turtle('square')
             part.penup()
@@ -37,7 +38,7 @@ class Snake:
     def control(self):
 
         head = self.body[0]
-        # time.sleep(0.01)
+
         def go_up():
             if head.heading() != 270:
                 self.body[0].setheading(90)

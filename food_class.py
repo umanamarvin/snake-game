@@ -8,6 +8,7 @@ def generate_position():
 
     return random_x, random_y
 
+
 class Food:
 
     def __init__(self, body, screen):
@@ -27,12 +28,9 @@ class Food:
         body_positions = []
         for position in self.body:
             body_positions.append(position.pos())
-
         new_position = generate_position()
         print("Random food position:", new_position)
-
         self.food.goto(new_position)
-
         self.food.showturtle()
         print("Food position after reappear:", self.food.pos())
 
@@ -56,5 +54,3 @@ class Food:
             return True
         else:
             return False
-
-
