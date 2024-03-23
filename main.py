@@ -3,7 +3,6 @@ from snake_class import Snake
 from food_class import Food
 from scoreboard_class import Scoreboard
 
-
 speed = 0.1
 screen = Scoreboard.create_screen(constants.SCREEN_SIZE)
 
@@ -15,8 +14,12 @@ food = Food(snake_body, screen)
 food.create()
 food.reappear()
 
-scoreboard = Scoreboard()
+score_test = []
+score = 0
+scoreboard = Scoreboard(score_test, score)
 scoreboard.create_scoreboard()
+
+print(score)
 
 game = True
 
@@ -28,5 +31,9 @@ while game:
     if food.food_collision():
         snake.increase()
         speed = snake.go_faster(speed)
+        score += 1
+        scoreboard.increase_score(score)
+        print(score)
+
     game = snake.wall_collision()
     time.sleep(speed)
