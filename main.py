@@ -30,10 +30,14 @@ while game:
     snake.control()
     if food.food_collision():
         snake.increase()
-        speed = snake.go_faster(speed)
+        # speed = snake.go_faster(speed)
         score += 1
         scoreboard.increase_score(score)
         print(score)
+    if snake.tail_collision() or snake.wall_collision():
+        scoreboard.game_over()
+        game = False
 
-    game = snake.wall_collision()
     time.sleep(speed)
+
+screen.exitonclick()

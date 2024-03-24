@@ -1,6 +1,8 @@
 import time
 from turtle import Screen, Turtle
 
+
+
 score = 0
 
 
@@ -36,6 +38,17 @@ class Scoreboard:
         self.scoreboard[0].goto(0, 260)
         self.scoreboard[0].write(f'Score: {score}', True, align="center", font=('Arial', 20, 'normal'))
         # board.hideturtle()
+
+    # @staticmethod
+    def game_over(self):
+
+        scoreboard = Turtle()
+        scoreboard.penup()
+        scoreboard.color('white')
+        scoreboard.goto(-10, 0)
+        scoreboard.write('Game Over', True, align="center", font=('Arial', 20, 'normal'))
+        scoreboard.hideturtle()
+        # self.scoreboard[0].exitonclick()
 
     # @staticmethod
     # def clear(test):

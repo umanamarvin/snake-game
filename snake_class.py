@@ -1,6 +1,7 @@
 import time
 from turtle import Turtle, Screen
 import constants
+from scoreboard_class import Scoreboard
 
 
 class Snake:
@@ -9,8 +10,8 @@ class Snake:
         self.screen = screen
 
     def create(self):
-        # initial_positions = [(0, 0), (-20, 0), (-40, 0), (-60, 0), (-80, 0), (-100, 0), (-120, 0), (-140, 0), (-160, 0)]
-        initial_positions = [(0, 0), (-20, 0), (-40, 0)]
+        initial_positions = [(0, 0), (-20, 0), (-40, 0), (-60, 0), (-80, 0), (-100, 0), (-120, 0), (-140, 0), (-160, 0)]
+        # initial_positions = [(0, 0), (-20, 0), (-40, 0)]
         for position in initial_positions:
             part = Turtle('square')
             part.penup()
@@ -66,11 +67,33 @@ class Snake:
         head_pos = self.body[0].pos()
         if head_pos[0] <= -constants.HEAD_MAX_X or head_pos[0] >= constants.HEAD_MAX_X or head_pos[1] <= -constants.HEAD_MAX_Y or head_pos[1] >= constants.MAX_STEP_Y:
             print('Wall Collision')
-            return False
-        else:
-            return True
 
-    # def tail_collision(self):
+            return True
+        else:
+            return False
+
+    def tail_collision(self):
+        head = self.body[0]
+        rest_body = []
+
+        for part in self.body:
+            if part == head:
+                pass
+            else:
+                rest_body.append(part)
+
+        for part in rest_body:
+            if head.distance(part) < 10:
+                print('Tail collision')
+
+                return True
+            # else:
+            #     return False
+
+
+
+
+
     #     head_pos = self.body[0].pos()
     #     head_x = head_pos[0]
     #     head_y = head_pos[1]

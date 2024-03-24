@@ -25,9 +25,9 @@ class Food:
         return self.food
 
     def reappear(self):
-        body_positions = []
-        for position in self.body:
-            body_positions.append(position.pos())
+        # body_positions = []
+        # for position in self.body:
+        #     body_positions.append(position.pos())
         new_position = generate_position()
         print("Random food position:", new_position)
         self.food.goto(new_position)
@@ -36,21 +36,11 @@ class Food:
 
     def food_collision(self):
 
-        food_position = self.food.pos()
-        food_x = food_position[0]
-        food_y = food_position[1]
-
-        head_position = self.body[0].pos()
-        head_x = head_position[0]
-        head_y = head_position[1]
-
-        # Calculate the distance between the snake's head and the food
-        distance = ((head_x - food_x) ** 2 + (head_y - food_y) ** 2) ** 0.5
-
-        # If the distance is less than a threshold, consider it a collision
-        if distance < 10:  # Adjust the threshold as needed
+        head = self.body[0]
+        if head.distance(self.food) < 10:
             print('Food Collision')
             self.reappear()
             return True
         else:
             return False
+
