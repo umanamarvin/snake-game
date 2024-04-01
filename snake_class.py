@@ -10,8 +10,8 @@ class Snake:
         self.screen = screen
 
     def create(self):
-        initial_positions = [(0, 0), (-20, 0), (-40, 0), (-60, 0), (-80, 0), (-100, 0), (-120, 0), (-140, 0), (-160, 0)]
-        # initial_positions = [(0, 0), (-20, 0), (-40, 0)]
+        # initial_positions = [(0, 0), (-20, 0), (-40, 0), (-60, 0), (-80, 0), (-100, 0), (-120, 0), (-140, 0), (-160, 0)]
+        initial_positions = [(0, 0), (-20, 0), (-40, 0)]
         for position in initial_positions:
             part = Turtle('square')
             part.penup()
@@ -89,10 +89,6 @@ class Snake:
                 return True
             # else:
             #     return False
-
-
-
-
 
     #     head_pos = self.body[0].pos()
     #     head_x = head_pos[0]

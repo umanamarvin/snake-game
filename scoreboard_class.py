@@ -28,15 +28,15 @@ class Scoreboard:
         scoreboard.penup()
         scoreboard.color('white')
         scoreboard.goto(0, 260)
-        scoreboard.write(f'Score: {self.score}', True, align="center", font=('Arial', 20, 'normal'))
+        scoreboard.write(f'Score: {self.score}    High Score: 0', True, align="center", font=('Arial', 20, 'normal'))
         scoreboard.hideturtle()
         test.append(scoreboard)
         # scoreboard.clear()
 
-    def increase_score(self, score):
+    def increase_score(self, score, high_score):
         self.scoreboard[0].clear()
         self.scoreboard[0].goto(0, 260)
-        self.scoreboard[0].write(f'Score: {score}', True, align="center", font=('Arial', 20, 'normal'))
+        self.scoreboard[0].write(f'Score: {score}    High Score: {high_score}', True, align="center", font=('Arial', 20, 'normal'))
         # board.hideturtle()
 
     # @staticmethod
@@ -49,6 +49,8 @@ class Scoreboard:
         scoreboard.write('Game Over', True, align="center", font=('Arial', 20, 'normal'))
         scoreboard.hideturtle()
         # self.scoreboard[0].exitonclick()
+
+
 
     # @staticmethod
     # def clear(test):

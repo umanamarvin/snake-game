@@ -16,6 +16,7 @@ food.reappear()
 
 score_test = []
 score = 0
+high_score = 0
 scoreboard = Scoreboard(score_test, score)
 scoreboard.create_scoreboard()
 
@@ -32,7 +33,8 @@ while game:
         snake.increase()
         # speed = snake.go_faster(speed)
         score += 1
-        scoreboard.increase_score(score)
+        high_score += 1
+        scoreboard.increase_score(score, high_score)
         print(score)
     if snake.tail_collision() or snake.wall_collision():
         scoreboard.game_over()
