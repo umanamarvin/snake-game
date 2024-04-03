@@ -10,7 +10,6 @@ class Snake(Turtle):
         self.head = None
 
     def create_snake(self):
-
         for location in constants.START_LOCATIONS:
             segment = Turtle("square")
             segment.penup()
@@ -37,7 +36,6 @@ class Snake(Turtle):
                 new_location = old_location
 
     def control(self):
-
         head = self.head
 
         def go_up():
@@ -63,7 +61,6 @@ class Snake(Turtle):
         self.screen.onkey(key=constants.RIGHT, fun=go_right)
 
     def wall_collision(self):
-
         head_pos = self.head.pos()
         if head_pos[0] <= -constants.HEAD_MAX_X or head_pos[0] >= constants.HEAD_MAX_X or head_pos[1] <= -constants.HEAD_MAX_Y or head_pos[1] >= constants.MAX_STEP_Y:
             print('Wall Collision')

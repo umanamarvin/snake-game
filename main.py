@@ -1,6 +1,5 @@
 import time
 from turtle import Screen
-
 from snake_class import Snake
 from food_class import Food
 from scoreboard_class import Scoreboard
@@ -46,7 +45,6 @@ while game_on:
     if snake.wall_collision() or snake.tail_collision():
         snake.reset_snake()
         timer = 0.1
-        # snake.create_snake()
         food.reappear()
         if score > high_score:
             high_score = score
