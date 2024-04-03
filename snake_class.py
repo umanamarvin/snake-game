@@ -62,7 +62,7 @@ class Snake(Turtle):
 
     def wall_collision(self):
         head_pos = self.head.pos()
-        if head_pos[0] <= -constants.HEAD_MAX_X or head_pos[0] >= constants.HEAD_MAX_X or head_pos[1] <= -constants.HEAD_MAX_Y or head_pos[1] >= constants.MAX_STEP_Y:
+        if head_pos[0] <= -constants.HEAD_MAX_X or head_pos[0] >= constants.HEAD_MAX_X or head_pos[1] <= -constants.HEAD_MAX_Y or head_pos[1] >= constants.HEAD_MAX_Y:
             print('Wall Collision')
             return True
         else:

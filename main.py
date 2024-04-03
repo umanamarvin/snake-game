@@ -31,7 +31,7 @@ def end_game():
 
 while game_on:
 
-    scoreboard.write_scoreboard(score, high_score)
+    scoreboard.write_scoreboard(score)
 
     snake.move()
     snake.control()
@@ -48,6 +48,7 @@ while game_on:
         food.reappear()
         if score > high_score:
             high_score = score
+            scoreboard.increase_high_score(high_score)
         score = 0
 
     time.sleep(timer)
